@@ -23,12 +23,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="Migration.qrc">
-      <Filter>Resource Files</Filter>
-    </QtRcc>
-    <QtUic Include="Migration.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
     <QtMoc Include="Migration.h">
       <Filter>Header Files</Filter>
     </QtMoc>
