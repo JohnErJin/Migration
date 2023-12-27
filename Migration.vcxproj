@@ -60,11 +60,11 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(Qt_INCLUDEPATH_);$(Yangtze)\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(Qt_INCLUDEPATH_);$(Yangtze)\include;$(Yangtze)\include\geos;$(Yangtze)\include\basedefine</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(Yangtze)\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>%(AdditionalDependencies);$(Qt_LIBS_);$(Yangtze)\lib\basedefine\basedefine.lib;$(Yangtze)\lib\basedefine\Release_x64\*.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(Yangtze)\lib;$(Yangtze)\lib\basedefine;$(Yangtze)\lib\Release_x64;</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies);$(Qt_LIBS_);$(Yangtze)\lib\basedefine\basedefine.lib;$(Yangtze)\lib\Release_x64\fluvsim.lib;$(Yangtze)\lib\Release_x64\geos.lib;$(Yangtze)\lib\Release_x64\geos_c.lib;$(Yangtze)\lib\Release_x64\tinyxml2.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
@@ -92,9 +92,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="RenderArea.cpp" />
+    <ClCompile Include="util.cpp" />
     <QtMoc Include="Migration.h" />
     <ClCompile Include="Migration.cpp" />
     <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="RenderArea.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="util.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

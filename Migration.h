@@ -1,7 +1,7 @@
 #pragma once
 #pragma execution_character_set("utf-8")
-#include <QtWidgets/QMainWindow>
-#include <QtCharts>
+#include <QtWidgets>
+#include "RenderArea.h"
 class Migration : public QDialog
 {
     Q_OBJECT
@@ -11,16 +11,15 @@ public:
     ~Migration();
 
 private:
-    QChart* chart;
-    QChartView* chartView;
+    RenderArea* renderArea_widget;
     QTabWidget* tabWidget;
-    QSpinBox* lateralRate_spinBox;
-    QSpinBox* forwardRate_spinBox;
-    QSpinBox* verticalRate_spinBox;
+    QDoubleSpinBox* lateralRate_spinBox;
+    QDoubleSpinBox* forwardRate_spinBox;
+    QDoubleSpinBox* verticalRate_spinBox;
     QCheckBox* showRange_checkBox;
     QCheckBox* showRate_checkBox;
     QPushButton* createMidLine_pushButton;
-    QPushButton* remove_pushButton;
+    QPushButton* migrate_pushButton;
     QPushButton* clear_pushButton;
 
 private:
